@@ -47,10 +47,16 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
+const shirt1 = { color: "red", size: "medium" };
+const shirt2 = { size: "medium", color: "red" };
+const shirt3 = { size: "medium", color: "red", sleeveLength: "long" };
+const shirt4 = { colors: ["red", "blue"], size: "medium" };
+const shirt5 = { size: "medium", colors: ["red", "blue"] };
+const shirt6 = { size: "medium", colors: ["green", "blue"], sleeveLength: "long" }; // 
+const shirt7 = { size: "medium", colors: ["red", "blue"] }; // same as shirt 4 
 
-const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
-const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
-assertEqual(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject), true); // => true
-
-const longSleeveMultiColorShirtObject= { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
-assertEqual(eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject), false); // => false
+assertEqual(eqObjects(shirt1 , shirt2), true); // => true
+assertEqual(eqObjects(shirt1, shirt3), false); // => false
+assertEqual(eqObjects(shirt4  , shirt5), true); // => true
+assertEqual(eqObjects(shirt3  , shirt6), true); // => true **shirt3 and shirt6 have different values for colors?? 
+assertEqual(eqObjects(shirt1  , shirt7), true); // => true

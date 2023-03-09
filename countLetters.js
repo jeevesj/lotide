@@ -8,11 +8,20 @@ const assertEqual = function(actual, expected) {
 };
 
 function countLetters(something) {
-  let count = 0;
-  for (const letters of something) {
-    count += 1;
+  let newSentence = something.replace(/ /g,'');
+  let letterCount = {};
+  for (let i = 0; i < newSentence.length; i++) {
+    let letterKey = newSentence[i];
+    if (!letterCount[letterKey]) {
+      letterCount[letterKey] = 1;
+    } else {
+      letterCount[letterKey]++;
+    }
   }
-  return count;
-};
+  return letterCount;
 
-console.log(countLetters("olympics"));
+};
+ 
+
+console.log(countLetters("LHL")) // expected { L: 2, H: 1 }
+console.log(countLetters("lighthouse in the house"))
