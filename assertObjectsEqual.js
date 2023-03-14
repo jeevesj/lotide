@@ -1,3 +1,4 @@
+const { builtinModules } = require('module');
 
 const eqArrays = function(array1, array2) {
   let result = true;
@@ -45,6 +46,8 @@ const assertObjectsEqual = function(actual, expected) {
   }
 };
 
-const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
-const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
-assertObjectsEqual(multiColorShirtObject, anotherMultiColorShirtObject);
+module.exports = assertObjectsEqual;
+
+// const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
+// const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
+// assertObjectsEqual(multiColorShirtObject, anotherMultiColorShirtObject);

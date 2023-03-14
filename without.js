@@ -10,4 +10,6 @@ function without(source, itemsToRemove) {
   return newSource;
 }
 
-console.log(without(["1", "2", "3"], [1, 2, "3"]));
+module.exports = without;
+
+// console.log(without(["1", "2", "3"], [1, 2, "3"]));
