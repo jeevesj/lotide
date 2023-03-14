@@ -24,7 +24,7 @@ const middle = function(array) {
   newArray = [];
   if(array.length > 2) {  
     if (array.length % 2 != 0) {
-      let number = Math.ceil((array.length / 2));
+      let number = Math.floor((array.length / 2));
       newArray.push(array[number]);
     } else if (array.length % 2 == 0) {
       let number = Math.floor((array.length / 2));
@@ -34,6 +34,7 @@ const middle = function(array) {
   return newArray;
 };
 
-//console.log(middle([1]));
+module.exports = middle;
+
 
 
